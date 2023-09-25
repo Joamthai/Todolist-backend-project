@@ -1,0 +1,31 @@
+REGISTER
+POST /auth/register
+BODY username, password, confirmPassword, email?
+
+#TABLE USER#
+id: primary-key varChar(191) UUID
+username: varChar(40) unique not null
+email: varChar(40)
+password: varChar(191) not null
+
+#TABLE TODO#
+id: primary-key varChar(191) UUID
+title: varChar(191) not null
+completed: boolean not null default false
+dueDate: date
+userId: varChar(191) not null
+___________________________________________________________
+
+LOGIN
+POST /auth/login
+BODY username, password
+
+CREATE TODO
+
+UPDATE TODO BY ID
+
+DELETE TODO BY ID
+
+GET ALL TODO
+
+GET TODO BY ID
