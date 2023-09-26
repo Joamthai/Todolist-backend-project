@@ -22,10 +22,18 @@ BODY username, password
 ___________________________________________________________
 
 CREATE TODO
-POST /TODO
+POST /todo
+HEADER authorization, bearer accessToken 
 BODY title, completed?, dueDate?, userId
+response
+200 message
+400, 401 message
+500 message
+
+___________________________________________________________
 
 UPDATE TODO BY ID
+
 
 DELETE TODO BY ID
 
