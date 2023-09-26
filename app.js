@@ -8,9 +8,10 @@ const authRoute = require('./routes/auth-route');
 const app = express();
 
 app.use(express.json());
-
+// User
 app.use('/auth', authRoute);
 
+// Error
 app.use(notFoundMiddleware);
 app.use(errorMiddleware);
 

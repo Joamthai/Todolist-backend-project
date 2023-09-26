@@ -19,8 +19,11 @@ ___________________________________________________________
 LOGIN
 POST /auth/login
 BODY username, password
+___________________________________________________________
 
 CREATE TODO
+POST /TODO
+BODY title, completed?, dueDate?, userId
 
 UPDATE TODO BY ID
 
