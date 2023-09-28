@@ -19,3 +19,16 @@ exports.createTodo = async (req, res, next) => {
   }
   res.status(201).json({ message: 'CREATED' });
 };
+
+exports.getAllTodo = async (req, res, next) => {
+  try {
+    const todos = await prisma.todo.findMany({
+      where: {
+        userId: req.user.id,
+      },
+    });
+    res.status(200).json(todos);
+  } catch (error) {
+    next(error);
+  }
+};

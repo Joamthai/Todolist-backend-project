@@ -38,5 +38,11 @@ UPDATE TODO BY ID
 DELETE TODO BY ID
 
 GET ALL TODO
+GET /todo
+HEADER authorization, bearer accessToken
+response
+200 TODO array
+400, 401 message
+500 message
 
 GET TODO BY ID
