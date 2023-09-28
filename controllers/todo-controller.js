@@ -3,7 +3,7 @@ const prisma = require('../models/prisma');
 exports.createTodo = async (req, res, next) => {
   try {
     const { title, completed, dueDate } = req.body;
-    await prisma.todo.create({
+    const todo = await prisma.todo.create({
       data: {
         title,
         completed,
@@ -14,10 +14,10 @@ exports.createTodo = async (req, res, next) => {
         },
       },
     });
+    res.status(201).json({ message: 'CREATED', todo });
   } catch (error) {
     next(error);
   }
-  res.status(201).json({ message: 'CREATED' });
 };
 
 exports.getAllTodo = async (req, res, next) => {
